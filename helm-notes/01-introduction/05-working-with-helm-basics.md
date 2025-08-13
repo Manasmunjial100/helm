@@ -39,3 +39,11 @@ helm list
 
 # 🗑️ Uninstall Release
 helm uninstall my-release
+
+Update Repositories:
+Similar to a system package manager, refresh the local cache of repository information with:
+
+$ helm repo update
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "bitnami" chart repository
+Update Complete. Happy Helming!

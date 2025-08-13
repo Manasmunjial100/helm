@@ -13,9 +13,8 @@ It simplifies the process of deploying and managing complex applications by bund
 Kubernetes is powerful but can be **complex** to manage because it involves many separate configuration files (**YAML** files).  
 Instead of manually creating and managing multiple YAML files, Helm allows you to deploy an **entire application** with a single command:
 
-```bash
-helm install my-app my-chart/
-2️⃣ Reusability
+
+### 2️⃣ Reusability
 Helm Charts are reusable — you can use the same chart for different environments (dev, staging, production) by just changing the configuration values.
 This saves time and reduces errors.
 

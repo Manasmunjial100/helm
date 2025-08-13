@@ -124,3 +124,74 @@ HELM REPOSITORY -        artifacthub.io
 
 
 ![Helm Components Diagram](../images/helmchartstructure.jpg)
+
+
+---
+
+## 📄 Chart.yaml and Helm Chart Structure
+
+Every Helm chart includes a **Chart.yaml** file that stores metadata about the chart.  
+This metadata covers details like:
+
+- Chart API version
+- Application version
+- Chart version
+- Name and description
+- Dependencies
+- Additional metadata for discovery and reference
+
+> **Note:**  
+> Helm 3 charts use `apiVersion: v2`, while Helm 2 charts use `apiVersion: v1`.  
+> This versioning ensures Helm interprets features (e.g., dependencies, type) correctly.
+
+---
+
+### 📝 Example: Chart.yaml for WordPress
+```yaml
+apiVersion: v2
+appVersion: 5.8.1
+version: 12.1.27
+name: wordpress
+description: Web publishing platform for building blogs and websites.
+type: application
+dependencies:
+  - condition: mariadb.enabled
+    name: mariadb
+    repository: https://charts.bitnami.com/bitnami
+    version: 9.x.x
+keywords:
+  - application
+  - blog
+  - wordpress
+maintainers:
+  - email: containers@bitnami.com
+    name: Bitnami
+home: https://github.com/bitnami/charts/tree/master/bitnami/wordpress
+icon: https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png
+
+
+
+🔍 Key Elements in Chart.yaml
+apiVersion – Chart API version (v2 for Helm 3, v1 for Helm 2).
+
+appVersion – Version of the packaged application (e.g., WordPress 5.8.1).
+
+version – Chart version, used to track chart changes independently of the app version.
+
+name, description, type – Chart’s name (wordpress), description, and type (application).
+
+dependencies – Lists dependent charts (e.g., MariaDB in this example).
+
+keywords, maintainers, home, icon – Extra metadata for search, authorship, and reference.
+
+📂 Typical Helm Chart Directory Structure
+bash
+Copy
+Edit
+mychart/
+│── Chart.yaml        # Chart metadata
+│── values.yaml       # Default configuration values
+│── templates/        # Kubernetes manifest templates
+│── charts/           # Optional: dependent charts
+└── README.md         # Optional: chart documentation
+This structure ensures a Helm chart is self-contained, reusable, and easy to share.

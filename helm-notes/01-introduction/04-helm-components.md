@@ -20,11 +20,21 @@
 ![Helm Components Diagram](../images/helm-components-chart-repository-diagram.jpg)
 
 
-# ⚙️ Helm Charts and tempting
-Helm charts bundle not only Kubernetes manifest files but also powerful templating capabilities that support flexibility and customization. Consider a simple HelloWorld application running an Nginx web server. This application uses two primary Kubernetes objects—a Deployment and a Service. The deployment template uses templating to substitute values defined in a separate configuration file.
+## 📜 Helm Charts and Templating
 
-Below is an example of a basic Helm chart, organized into distinct files:
+Helm charts bundle not only Kubernetes manifest files but also **powerful templating capabilities** that provide flexibility and customization.
 
+### Example: HelloWorld Application with Nginx
+Consider a simple HelloWorld application running an Nginx web server.  
+This application uses two primary Kubernetes objects:
+- **Deployment**
+- **Service**
+
+The deployment template uses Helm’s templating syntax to substitute values defined in a separate configuration file (`values.yaml`).
+
+---
+
+```yaml
 # service.yaml
 apiVersion: v1
 kind: Service
@@ -39,6 +49,7 @@ spec:
       name: http
   selector:
     app: hello-world
+
 # deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -61,8 +72,19 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
+
 # values.yaml
 replicaCount: 1
 image:
   repository: nginx
-In this example, the values.yaml file provides dynamic configuration values (such as replica count and image repository), allowing you to customize deployments effortlessly without altering the core chart templates.
+
+  
+💡 How It Works
+
+values.yaml stores dynamic configuration values such as replica count and image repository.
+
+Templates (deployment.yaml, service.yaml) reference these values with {{ .Values.key }}.
+
+This allows customization without modifying the template files.
+
+

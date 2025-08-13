@@ -118,12 +118,11 @@ Using the same chart source for different environments (e.g., production and dev
 
 
 
-HELM REPOSITORY -        artifacthub.io
 
 
 
 
-![Helm Components Diagram](../images/helmchartstructure.jpg)
+# ⚙️ Helm Structure
 
 
 ---

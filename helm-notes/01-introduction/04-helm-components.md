@@ -123,4 +123,4 @@ HELM REPOSITORY -        artifacthub.io
 
 
 
-![Helm Components Diagram](../images/helmchartstructure.png)
+![Helm Components Diagram](../images/helmchartstructure.jpg)

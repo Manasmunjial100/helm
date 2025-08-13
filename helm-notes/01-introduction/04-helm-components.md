@@ -78,7 +78,7 @@ replicaCount: 1
 image:
   repository: nginx
 
-  
+
 💡 How It Works
 
 values.yaml stores dynamic configuration values such as replica count and image repository.
@@ -88,3 +88,27 @@ Templates (deployment.yaml, service.yaml) reference these values with {{ .Values
 This allows customization without modifying the template files.
 
 
+
+
+## 🚀 Managing Releases with Helm
+
+One of Helm's standout features is its ability to manage **multiple releases** from the same chart.  
+
+For example, you might deploy **two distinct instances** of a WordPress website:
+- One for **external customers** (production)
+- Another for **internal development**
+
+Although both releases use the **same chart**, they are managed independently — each with its own **configuration** and **revision history**.
+
+---
+
+### 📌 Example: Installing Two Independent Releases
+
+```bash
+# Install the first release with a custom name 'my-site'
+helm install my-site bitnami/wordpress
+
+# Install a second independent release named 'my-second-site'
+helm install my-second-site bitnami/wordpress
+💡 Tip:
+Using the same chart source for different environments (e.g., production and development) simplifies management while keeping configurations isolated.

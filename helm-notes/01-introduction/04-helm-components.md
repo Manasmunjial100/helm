@@ -112,3 +112,16 @@ helm install my-site bitnami/wordpress
 helm install my-second-site bitnami/wordpress
 💡 Tip:
 Using the same chart source for different environments (e.g., production and development) simplifies management while keeping configurations isolated.
+
+
+
+
+
+
+HELM REPOSITORY -        artifacthub.io
+
+
+
+
+![Helm Components Diagram](../images/helmchartstructure.png)
+

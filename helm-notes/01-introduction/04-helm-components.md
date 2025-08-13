@@ -15,3 +15,6 @@
 4. **Metadata**  
    Helm stores release metadata, including chart details and revision history, as Secrets within your Kubernetes cluster.  
    This ensures that the deployment history remains accessible to everyone working on the cluster.
+
+
+![Helm Components Diagram](../images/helm-components-chart-repository-diagram.jpg)

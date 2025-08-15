@@ -4,14 +4,15 @@ This guide explains how to customize Helm chart parameters when deploying applic
 
 ## 1. Understanding the Default Configuration
 
-- Helm charts use default values defined in `values.yaml`.  
+- Helm charts use default values defined in `values.yaml`.
 - For example, the WordPress chart includes parameters like:
-  ```yaml
-  wordpressUsername: user
-  wordpressPassword: ""
-  wordpressEmail: user@example.com
-  wordpressFirstName: WordPress user first name
-  wordpressBlogName: User's Blog!
+
+```yaml
+wordpressUsername: user
+wordpressPassword: ""
+wordpressEmail: user@example.com
+wordpressFirstName: WordPress user first name
+wordpressBlogName: User's Blog!
 These defaults are referenced in deployment manifests via templating:
 
 yaml
@@ -80,18 +81,3 @@ Custom YAML files for organized and repeatable overrides.
 Editing the chart itself for deeper, persistent customization.
 
 These approaches give you flexibility tailored to your workflow and environment.
-
-pgsql
-Copy
-Edit
-
-Do you also want me to make **similar Markdown notes** for the next Helm section so the GitHub repo has them in a consistent format?
-
-
-
-
-
-
-
-
-Ask ChatGPT

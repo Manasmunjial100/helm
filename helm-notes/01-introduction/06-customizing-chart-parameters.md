@@ -42,7 +42,10 @@ Important: Always test changes in a development environment before deploying to 
 
 
 
-
+Method,Use Case,Example Command
+--set,Override a few parameters inline,"helm install --set wordpressBlogName=""Helm Tut"" my-release bitnami/wordpress"
+Custom values file,Override multiple values cleanly,helm install --values custom-values.yaml my-release bitnami/wordpress
+Edit built-in values.yaml,"Permanent, local customizations",helm install my-release ./wordpress
 
 
 
